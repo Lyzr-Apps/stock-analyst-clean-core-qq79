@@ -8,7 +8,6 @@ import {
   RiSettings4Line,
   RiStockLine,
   RiArrowUpLine,
-  RiArrowDownLine,
   RiAlertLine,
   RiMailSendLine,
   RiCloseLine,
@@ -85,7 +84,7 @@ function parseAgentResponse(result: any): any {
     if (!data && result?.response?.message) {
       try {
         data = JSON.parse(result.response.message)
-      } catch {
+      } catch (_e) {
         /* ignore */
       }
     }
@@ -93,14 +92,14 @@ function parseAgentResponse(result: any): any {
       try {
         const raw = JSON.parse(result.raw_response)
         data = raw?.response?.result || raw?.result || raw
-      } catch {
+      } catch (_e) {
         /* ignore */
       }
     }
     if (typeof data === 'string') {
       try {
         data = JSON.parse(data)
-      } catch {
+      } catch (_e) {
         /* keep as string */
       }
     }
@@ -113,12 +112,12 @@ function parseAgentResponse(result: any): any {
     if (typeof data === 'string') {
       try {
         data = JSON.parse(data)
-      } catch {
+      } catch (_e) {
         /* keep as string */
       }
     }
     return data
-  } catch {
+  } catch (_e) {
     return null
   }
 }
@@ -302,7 +301,7 @@ export default function Page() {
     try {
       const saved = localStorage.getItem('stockpulse_history')
       if (saved) setAlertHistory(JSON.parse(saved))
-    } catch { /* ignore */ }
+    } catch (_e) { /* ignore */ }
     try {
       const savedSettings = localStorage.getItem('stockpulse_settings')
       if (savedSettings) {
@@ -316,14 +315,14 @@ export default function Page() {
         setMaxDebtToEquity(parsed.defaultCriteria?.maxDebtToEquity ?? 1.5)
         if (parsed.recipientEmail) setEmailInput(parsed.recipientEmail)
       }
-    } catch { /* ignore */ }
+    } catch (_e) { /* ignore */ }
   }, [])
 
   // ─── Save history to localStorage ────────────────────────────────────────
   useEffect(() => {
     try {
       localStorage.setItem('stockpulse_history', JSON.stringify(alertHistory))
-    } catch { /* ignore */ }
+    } catch (_e) { /* ignore */ }
   }, [alertHistory])
 
   // ─── Loading message rotation ────────────────────────────────────────────
@@ -480,7 +479,7 @@ Please format this as a professional investment alert email and send it to ${ema
       localStorage.setItem('stockpulse_settings', JSON.stringify(settings))
       setSettingsSaved(true)
       setTimeout(() => setSettingsSaved(false), 3000)
-    } catch { /* ignore */ }
+    } catch (_e) { /* ignore */ }
   }, [settings])
 
   // ─── Export History as CSV ─────────────────────────────────────────────────

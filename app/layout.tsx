@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Work_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { IframeLoggerInit } from '@/components/IframeLoggerInit'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import { AgentInterceptorProvider } from '@/components/AgentInterceptorProvider'
 
-const workSans = Work_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
+const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
 export const metadata: Metadata = {
   title: 'StockPulse',
@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={workSans.className} suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         <IframeLoggerInit />
         <ErrorBoundary>
           <AgentInterceptorProvider>
