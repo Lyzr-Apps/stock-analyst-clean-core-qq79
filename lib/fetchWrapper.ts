@@ -1,6 +1,6 @@
-const fetchWrapper = async (...args) => {
+const fetchWrapper = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response | undefined> => {
   try {
-    const response = await fetch(...args);
+    const response = await fetch(input, init);
 
     // if backend sent a redirect
     if (response.redirected) {
@@ -38,7 +38,7 @@ const fetchWrapper = async (...args) => {
     }
 
     return response;
-  } catch (error) {
+  } catch (_error) {
     // network failures
     const shouldRefresh = confirm(
       "Cannot connect to backend. Click OK to refresh.",
