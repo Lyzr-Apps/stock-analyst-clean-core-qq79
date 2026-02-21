@@ -1,0 +1,40 @@
+{
+  "agent_name": "Technical Analysis Agent",
+  "agent_id": "699961fc0fc64800c899baf0",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "stocks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ticker": { "type": "string" },
+            "current_price": { "type": "string" },
+            "sma_50": { "type": "string" },
+            "sma_200": { "type": "string" },
+            "rsi": { "type": "string" },
+            "macd_signal": { "type": "string" },
+            "support_level": { "type": "string" },
+            "resistance_level": { "type": "string" },
+            "volume_trend": { "type": "string" },
+            "chart_pattern": { "type": "string" },
+            "technical_score": { "type": "string" },
+            "signal": { "type": "string" },
+            "key_points": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "required": ["ticker", "current_price", "sma_50", "sma_200", "rsi", "macd_signal", "support_level", "resistance_level", "volume_trend", "chart_pattern", "technical_score", "signal", "key_points"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["stocks"],
+    "additionalProperties": false
+  }
+}

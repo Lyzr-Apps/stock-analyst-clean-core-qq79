@@ -1,0 +1,19 @@
+{
+  "agent_name": "Email Alert Agent",
+  "agent_id": "69996230730bbd74d53e8a63",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "email_sent": { "type": "string" },
+      "recipient": { "type": "string" },
+      "subject": { "type": "string" },
+      "status": { "type": "string" },
+      "message": { "type": "string" }
+    },
+    "required": ["email_sent", "recipient", "subject", "status", "message"],
+    "additionalProperties": false
+  }
+}

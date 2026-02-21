@@ -1,0 +1,22 @@
+{
+  "agent_name": "Email Alert Agent",
+  "agent_id": "69996230730bbd74d53e8a63",
+  "description": "Formats the approved analysis into a clean, structured email and sends it to the configured email address via Gmail",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "email_sent": "string",
+    "recipient": "string",
+    "subject": "string",
+    "status": "string",
+    "message": "string"
+  },
+  "example_response": {
+    "email_sent": "sample string",
+    "recipient": "sample string",
+    "subject": "sample string",
+    "status": "sample string",
+    "message": "sample string"
+  }
+}

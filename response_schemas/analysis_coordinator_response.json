@@ -1,0 +1,64 @@
+{
+  "agent_name": "Analysis Coordinator",
+  "agent_id": "6999621e8cfc4d116987bcb7",
+  "description": "Coordinates technical and fundamental sub-agents, aggregates their findings into a unified investment recommendation with buy/hold/sell signals",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "stocks": [
+      {
+        "ticker": "string",
+        "company_name": "string",
+        "current_price": "string",
+        "technical_score": "string",
+        "technical_signal": "string",
+        "fundamental_score": "string",
+        "fundamental_assessment": "string",
+        "overall_score": "string",
+        "recommendation": "string",
+        "confidence": "string",
+        "technical_highlights": [
+          "string"
+        ],
+        "fundamental_highlights": [
+          "string"
+        ],
+        "risk_factors": [
+          "string"
+        ],
+        "conflicting_signals": "string"
+      }
+    ],
+    "analysis_summary": "string",
+    "market_context": "string"
+  },
+  "example_response": {
+    "stocks": [
+      {
+        "ticker": "sample string",
+        "company_name": "sample string",
+        "current_price": "sample string",
+        "technical_score": "sample string",
+        "technical_signal": "sample string",
+        "fundamental_score": "sample string",
+        "fundamental_assessment": "sample string",
+        "overall_score": "sample string",
+        "recommendation": "sample string",
+        "confidence": "sample string",
+        "technical_highlights": [
+          "sample string"
+        ],
+        "fundamental_highlights": [
+          "sample string"
+        ],
+        "risk_factors": [
+          "sample string"
+        ],
+        "conflicting_signals": "sample string"
+      }
+    ],
+    "analysis_summary": "sample string",
+    "market_context": "sample string"
+  }
+}

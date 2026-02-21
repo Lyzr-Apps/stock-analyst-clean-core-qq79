@@ -1,0 +1,49 @@
+{
+  "agent_name": "Analysis Coordinator",
+  "agent_id": "6999621e8cfc4d116987bcb7",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "stocks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ticker": { "type": "string" },
+            "company_name": { "type": "string" },
+            "current_price": { "type": "string" },
+            "technical_score": { "type": "string" },
+            "technical_signal": { "type": "string" },
+            "fundamental_score": { "type": "string" },
+            "fundamental_assessment": { "type": "string" },
+            "overall_score": { "type": "string" },
+            "recommendation": { "type": "string" },
+            "confidence": { "type": "string" },
+            "technical_highlights": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "fundamental_highlights": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "risk_factors": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "conflicting_signals": { "type": "string" }
+          },
+          "required": ["ticker", "company_name", "current_price", "technical_score", "technical_signal", "fundamental_score", "fundamental_assessment", "overall_score", "recommendation", "confidence", "technical_highlights", "fundamental_highlights", "risk_factors", "conflicting_signals"],
+          "additionalProperties": false
+        }
+      },
+      "analysis_summary": { "type": "string" },
+      "market_context": { "type": "string" }
+    },
+    "required": ["stocks", "analysis_summary", "market_context"],
+    "additionalProperties": false
+  }
+}

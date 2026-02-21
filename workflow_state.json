@@ -1,0 +1,26 @@
+{
+  "agents": {
+    "technical_analysis_agent": {
+      "agent_id": "699961fc0fc64800c899baf0",
+      "name": "Technical Analysis Agent"
+    },
+    "fundamental_analysis_agent": {
+      "agent_id": "699961fc2361782dde9da314",
+      "name": "Fundamental Analysis Agent"
+    },
+    "analysis_coordinator": {
+      "agent_id": "6999621e8cfc4d116987bcb7",
+      "name": "Analysis Coordinator",
+      "is_manager": true,
+      "managed_agents": [
+        "699961fc0fc64800c899baf0",
+        "699961fc2361782dde9da314"
+      ]
+    },
+    "email_alert_agent": {
+      "agent_id": "69996230730bbd74d53e8a63",
+      "name": "Email Alert Agent",
+      "tools": ["gmail"]
+    }
+  }
+}

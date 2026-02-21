@@ -1,0 +1,40 @@
+{
+  "agent_name": "Fundamental Analysis Agent",
+  "agent_id": "699961fc2361782dde9da314",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "stocks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ticker": { "type": "string" },
+            "pe_ratio": { "type": "string" },
+            "forward_pe": { "type": "string" },
+            "eps": { "type": "string" },
+            "revenue_growth": { "type": "string" },
+            "debt_to_equity": { "type": "string" },
+            "profit_margin": { "type": "string" },
+            "free_cash_flow": { "type": "string" },
+            "recent_earnings": { "type": "string" },
+            "industry_comparison": { "type": "string" },
+            "fundamental_score": { "type": "string" },
+            "assessment": { "type": "string" },
+            "key_points": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "required": ["ticker", "pe_ratio", "forward_pe", "eps", "revenue_growth", "debt_to_equity", "profit_margin", "free_cash_flow", "recent_earnings", "industry_comparison", "fundamental_score", "assessment", "key_points"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["stocks"],
+    "additionalProperties": false
+  }
+}
